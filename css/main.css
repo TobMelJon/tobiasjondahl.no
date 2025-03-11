@@ -299,12 +299,6 @@ main {
     z-index: 1;
 }
 
-.assingment3_image{
-    width:40vw;
-    align-self: center;
-    height:auto;
-}
-
 iframe {
     width: 90%;
     height: 100vh;
