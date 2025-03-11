@@ -1,0 +1,95 @@
+.oswald-Heading {
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    width: 99vw;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.oswald-Sub {
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+    width: 99vw;
+    text-align: center;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.Background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+    z-index: -1;
+}
+
+.Woman{
+    filter: grayscale(100%);
+    filter: blur(50%);
+    height: 5vw;
+    position: fixed;
+    top: 47vh;
+    left: 53vw;
+}
+.Man{
+    filter: saturate(200%);
+    height: 20vw;
+    width: auto;
+    position: fixed;
+    top: 40vh;
+    left: 40vw;
+}
+
+.Canvas{
+    position: fixed;
+    top: 40vh;
+    left: 50vw;
+    height: 40vh;
+    width: 10vw;
+}
+
+.Tabel{
+    position: fixed;
+    top: 55vh;
+    left: 32vw;
+    height: 25vh;
+    width: 12vw;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    width: 99vw;
+    text-align: center;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#switchbutton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

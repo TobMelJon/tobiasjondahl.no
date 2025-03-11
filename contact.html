@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Get to know me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Assingments</button>
+                    <div class="dropdown-content">
+                        <a href="assignments/assingment1.html">Assignment 1</a>
+                        <a href="assignments/assingment2.html">Assignment 2</a>
+                        <a href="assignments/assingment3.html">Assignment 3</a>
+                        <a href="assignments/assingment4.html">Assingment 4</a>
+                    </div>
+                </div>
+                <li><a href="exercises/exercises.html">Exercises</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="intro_textbox">
+                <h1>Contact Me</h1>
+                <p>If you’d like to reach out, you can use the form below or even better email me directly!</p>
+
+                <form action="mailto:tobiasmj@live.no" method="post" enctype="text/plain" class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+            <!-- Embedded Google Map -->
+            <div class="map">
+                <h2>My Location</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2333.2112129336388!2d5.355310277332157!3d60.46228051982366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x463cfe100d5d90a7%3A0xc40c7dff21e44965!2sKol%C3%A5sh%C3%B8yen%2016%2C%205135%20Flaktveit!5e1!3m2!1sno!2sno!4v1734094812542!5m2!1sno!2sno"
+                        width="400"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="images/Bryggen_svart.png" class="bryggen-image" alt="The old wharf of Bergen">
+        <p>&copy; 2024 Tobias Mellum Jondahl. All rights reserved.</p>
+        <p>Email: <a href="mailto:tobiasmj@live.no">tobiasmj@live.no</a></p>
+    </footer>
+</body>
+</html>

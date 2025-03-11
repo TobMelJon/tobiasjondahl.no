@@ -1,0 +1,398 @@
+/*TESTING AREA*/
+
+.test_image{
+    width:68vw;
+    align-self: center;
+    height:200vh;
+}
+
+
+/*TESTING AREAD*/
+
+/* Breakpoints */
+
+/* Tablet View (768px and below) */
+@media screen and (max-width: 768px) {
+    .intro {
+        flex-direction: column; /* Stack text and image vertically instead of horizontal*/
+        text-align: center;
+    }
+
+    .intro_text {
+        margin-bottom: 20px; /*Add space below the text */
+    }
+
+    .skills_ul {
+        text-align: center; /*center the skill list */
+    }
+
+    .skills_graphic img {
+        width: 60%; /*Adjust the image size for tablets */
+    }
+}
+
+/* Mobile View (480px and below) */
+@media screen and (max-width: 480px) {
+    .intro,
+    .skills_experience {
+        flex-direction: column; /* Stack divs vertically */
+        align-items: center; /* Center-align content */
+        text-align: center; /* Ensure text is centered */
+    }
+
+    .intro_imagebox,
+    .skills_graphic {
+        margin-top: 20px; /* Add spacing between text and image */
+        width: 100%; /* Ensure image container fits the screen */
+        max-width: 300px; /* Optional: limit the image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .skills_text,
+    .intro_textbox {
+        width: 100%; /* Full width for text content */
+        text-align: center; /* Center-align the text */
+    }
+
+    .contact-form {
+        width: 100%; /* Form takes full width on mobile */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .map iframe {
+        width: 100%; /* Ensure map iframe is full width */
+        height: 200px; /* Adjust height for mobile screens */
+    }
+
+    footer {
+        font-size: 12px; /* Adjust footer text size */
+        padding: 10px 5px; /* Slightly smaller padding */
+    }
+}
+/* Breakpoints */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, helvetica, arial, sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: darkred;
+    padding: 10px 0;
+    text-align: right;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 5vh;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: #e39823;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+nav ul li a:hover {
+    color: whitesmoke;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: helvetica, arial, sans-serif;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: darkred;
+    color: #e39823;
+    padding: 0px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    margin: 0 15px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: orange;
+    min-width: 160px;
+    z-index: 10;
+    text-align: left;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: darkred;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: darkorange;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content Area */
+main {
+    padding: 50px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.intro{
+    display: flex; /* puts the two div side by side */
+    align-items: center;
+    gap: 40px;
+    width: 66vw;
+    align-self: center;
+    height: 100vh;
+    margin: auto;
+    min-height: 100vh; /* Ensures section takes up the full viewport height */
+}
+
+.intro_textbox{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro_text{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.intro_imagebox {
+    position: relative; /* Ensures positioning context for absolute elements */
+    width: 300px; /* Set your specific width */
+    height: 400px; /* Set your specific height */
+}
+
+.svg_shadow {
+    position: absolute;
+    top: 10px; /* Offset down */
+    left: 10px; /* Offset right */
+    width: 100%; /* Matches the image size */
+    height: 100%;
+    background: darkred; /* Shadow color */
+    z-index: 1; /* Behind the image */
+}
+
+.picture_of_me {
+    width: 100%; /* Image fits the box dimensions */
+    height: 100%;
+    display: block;
+    position: relative; /* Keeps the picture in its correct flow */
+    z-index: 2; /* Ensures image is above the shadow */
+    transition: opacity 0.5s ease-in-out; /* Hover transition */
+}
+
+.picture_of_me_hover {
+    display: block;
+    width: 100%; /* Same size as the original image */
+    height: 100%;
+    position: absolute; /* Align directly on top */
+    top: 0; /* Aligns the hover image to the top of container */
+    left: 0; /* Aligns hover image to the left of container */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+    z-index: 2; /* Stacks it above the first image */
+}
+
+.intro_imagebox:hover .picture_of_me_hover {
+    opacity: 1; /* Makes the second image visible on hover */
+}
+
+.skills_experience {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    width: 66vw;
+    height: 100vh;
+    margin: auto; /* Center the section horizontally */
+
+}
+
+.skills_text {
+    flex: 1; /* Text occupies half the space */
+    max-width: 50%;
+    font-size: 1.1rem;
+}
+
+.skills_ul {
+    margin: 0 auto; /* Centers the UL block horizontally */
+    text-align: left; /* Ensures list text stays aligned to the left */
+    display: table; /* Makes the UL a table-like block, allowing auto-centering */
+}
+
+.skills_text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: darkred;
+}
+
+.skills_text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.skills_graphic {
+    display: flex;
+    justify-content: center; /* Centers images horizontally */
+    align-items: center; /* Aligns images vertically */
+    gap: 20px; /* Adds spacing between images */
+    flex-wrap: wrap; /* Wraps to a new line if too many images */
+    filter: grayscale(100%);
+}
+
+.skills_graphic img {
+    width: 100px; /* Set a fixed width for all images */
+    height: 100px; /* Set a fixed height for all images */
+    object-fit: contain; /* Ensures the entire image fits inside without cropping */
+    padding: 5px; /* Adds spacing inside each image container */
+}
+
+.bryggen-image {
+    display: block;
+    width: 100%; /* Bildet dekker hele sidens bredde */
+    height: auto; /* Bevarer riktig proporsjon */
+    margin-top: auto;
+    z-index: 1;
+}
+
+.assingment3_image{
+    width:40vw;
+    align-self: center;
+    height:auto;
+}
+
+iframe {
+    width: 90%;
+    height: 100vh;
+    border: 2px grey solid;
+    align-self: center;
+}
+
+.basic_section {
+    width: 66vw;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box; /* Prevent content overflow */
+}
+
+.assingment_text{
+    font-size: 16px;
+    height: auto;
+    width: 66vw;
+    align-content: center;
+}
+
+.exercise_text{
+    text-align: left;
+}
+
+.contact-section{
+    text-align: center;
+    width: 66vw;
+    height: auto;
+    align-self: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+.contact-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background-color: #a00;
+}
+
+.map {
+    margin-top: 20px;
+    width: 50%;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    background-color: darkred;
+    color: #C4974B;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto; /* Pushes footer to the bottom of the flex container */
+}
+
+footer a {
+    color: #ddd;
+    text-decoration: none;
+    text-align: left;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
