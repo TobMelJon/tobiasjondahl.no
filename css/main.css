@@ -98,7 +98,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 25px;
+    margin: 0 50px;
 }
 
 nav ul li a {
@@ -289,6 +289,24 @@ main {
     height: 100px; /* Set a fixed height for all images */
     object-fit: contain; /* Ensures the entire image fits inside without cropping */
     padding: 5px; /* Adds spacing inside each image container */
+}
+
+.License_reference{
+    font-size: 0.8em;        /* Litt mindre tekst */
+    color: #666;             /* Lys gråtone for lavere kontrast */
+    margin-top: 0.5em;       /* Litt luft over */
+    margin-bottom: 0;
+}
+
+.Digital_Creature_Section{
+    display: flex; /* puts the two div side by side */
+    align-items: center;
+    gap: 40px;
+    width: 66vw;
+    align-self: center;
+    height: 100vh;
+    margin: auto;
+    min-height: 100vh; /* Ensures section takes up the full viewport height */
 }
 
 .bryggen-image {

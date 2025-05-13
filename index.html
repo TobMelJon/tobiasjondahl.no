@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>  <!-- Importerer p5.js bibliotek -->
+    <script src="/tobiasjondahl.no/js/Digital_Creature_script.js"></script>
 </head>
 <body>
     <header>
@@ -12,16 +14,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">Get to know me</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <div class="dropdown">
-                    <button class="dropbtn">Showcase</button>
-                    <div class="dropdown-content">
-                        <a href="assignments/Digital_Creature.html">Digital Creature</a>
-                        <a href="">EMPTY</a>
-                        <a href="">EMPTY</a>
-                        <a href="assignments/assingment4.html">Assingment 4</a>
-                    </div>
-                </div>
-                <li><a href="">EMPTY</a></li>
             </ul>
         </nav>
     </header>
@@ -60,7 +52,70 @@
                 <img src="images/CSS3_logo_and_wordmark.svg.png" alt="Logo of CSS3">
             </div>
         </section>
-
+        <section class="basic_section">
+            <h1>
+                About Me
+            </h1>
+            <p>
+                Hello! 👋 My name is Tobias Mellum Jondahl, and I come from Arna,
+                just outside Bergen, Norway. I'm currently in the final stretch of completing my Bachelor's
+                degree in Information Science at the University of Bergen.
+            </p>
+            <p>
+                From a young age, I've been fascinated by technology and how it shapes the way we live,
+                work, and interact. This interest has led me to explore coding, systems development,
+                and digital solutions. Through my studies, I've developed skills in HTML, CSS, Python, SQL,
+                and gained a solid understanding of system design, algorithms,
+                and the foundations of information systems.
+            </p>
+            <p>
+                When I'm not busy solving problems with code or learning new technologies,
+                I enjoy spending time exploring Bergen's stunning landscapes and rich history.
+                Growing up near the coast has instilled in me an appreciation for both nature
+                and the balance that technology can bring to our lives.
+            </p>
+            <p>
+                I'm now excited to transition into the professional world where I can combine my passion for innovation
+                and my skills to contribute to building the digital solutions of tomorrow.
+                Whether it's front-end development, back-end work, or designing systems,
+                I'm eager to collaborate and grow as part of a dynamic team.
+                <br>
+                If you’d like to connect or learn more about my projects and experiences, don’t hesitate to reach out!
+            </p>
+        </section>
+        <section class="Digital_Creature_Section">
+            <div class="intro_textbox">
+                <p class="exercise_text">
+                    Here you can see a qurius creature, who follows your every move.
+                    Its original taken from p5.js, but given new life here and given som much needed
+                    eyelids.
+                </p>
+                <p class="exercise_text">
+                    Coding wise this is not to impressive, but it showcases my start in Javascript.
+                </p>
+                <br>
+                <br>
+                <b>Try not too poke its eyes!</b>
+            </div>
+            <div class="intro_imagebox">
+                <div id="canvasContainer"></div>
+                <p class="License_reference">
+                    <a href="https://p5js.org/examples/angles-and-motion-aim/">Aim</a>
+                    av <a href="https://p5js.org/people/">p5.js Contributors</a>
+                    og <a href="https://processingfoundation.org/people">The Processing Foundation</a>,
+                    endret av Tobias Jondahl, er lisensiert under
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0.</a>
+                </p>
+            </div>
+        </section>
+        <section class="intro">
+            <div>
+                <p>Screenshot of FlestFridager.no, too showcase ideas</p>
+            </div>
+            <div>
+                <p>Descriptive text</p>
+            </div>
+        </section>
     </main>
     <footer>
         <img src="images/Bryggen_svart.png" class="bryggen-image" alt="Picture of the wharf in Bergen">
