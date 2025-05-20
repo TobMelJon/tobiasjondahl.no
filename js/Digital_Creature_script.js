@@ -11,7 +11,7 @@ let eyelidSpeed = 0.4;
 function myCustomFeature() {
   let leftX = 150;
   let leftY = 200;
-  let leftEyeSize = 50;
+  let leftEyeSize = 51;
   let leftEyeRadius = leftEyeSize / 2;
 
   let rightX = 250;
@@ -53,7 +53,7 @@ function myCustomFeature() {
     noStroke();
     rectMode(CENTER);
     rect(0, rightTopRectX, rightEyeSize, rightEyeSize / 2);
-    rect(0, rightBottomRectX, leftEyeSize, leftEyeSize / 2);
+    rect(0, rightBottomRectX, rightEyeSize, rightEyeSize / 2);
   pop();
 }
 
