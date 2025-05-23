@@ -408,10 +408,10 @@ iframe {
     margin: auto;
 }
 #panContent{
-    width: 200%;
-    height: 200%;
+    width: 2110px;
+    height: 2110px;
     display: grid;
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(10, 200px);
     grid-auto-rows: 200px;
     gap: 10px;
     padding: 10px;
