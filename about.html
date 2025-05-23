@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Tobias M Jondahl</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
-    <script src="js/Gallery_showcase.js"></script>
+    <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script> <!-- panzoom -->
+    <script src="js/Interactive_Gallery_Showcase.js"></script>
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- LightGallery JavaScript -->
+    <!-- LightGallery JavaScript
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
     <script>
@@ -16,8 +17,7 @@
         speed: 300,
         download: false
       });
-    </script>
-
+    </script> -->
 </head>
 <body>
     <header>
@@ -26,38 +26,29 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">Get to know me</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <div class="dropdown">
-                    <button class="dropbtn">Assingments</button>
-                    <div class="dropdown-content">
-                        <a href="assignments/assingment1.html">Assignment 1</a>
-                        <a href="assignments/assingment2.html">Assignment 2</a>
-                        <a href="assignments/assingment3.html">Assignment 3</a>
-                        <a href="assignments/assingment4.html">Assingment 4</a>
-                    </div>
-                </div>
-                <li><a href="exercises/exercises.html">Exercises</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section class="basic_section">
             <h2>Interaktivt bilde-galleri</h2>
-            <div id="gallery" class="gallery">
-              <a href="img1.jpg">
-                <img src="images/Cute%20japanese%20spitz.jpg" alt="Bilde 1" />
-              </a>
-              <a href="img2.jpg">
-                <img src="img2.jpg" alt="Bilde 2" />
-              </a>
-              <a href="img3.jpg">
-                <img src="img3.jpg" alt="Bilde 3" />
-              </a>
+            <div id="galleryContainer">
+                <div id="panContent">
+                    <img class="panzoom-item" src="images/Cute%20japanese%20spitz.jpg" alt="Cute japanese spitz">
+                    <img class="panzoom-item" src="images/Cute%20japanese%20spitz.jpg" alt="xxx">
+                    <img class="panzoom-item" src="images/Cute%20japanese%20spitz.jpg" alt="xxx">
+                    <img class="panzoom-item" src="images/Cute%20japanese%20spitz.jpg" alt="xxx">
+                </div>
+            </div>
+            <div id="modal" class="hidden">
+                <span id="modalClose">×</span>
+                <img id= "modalImg" src="" alt="Enlarge">
             </div>
         </section>
         <section class="basic_section">
-            <h1>
+            <h2>
                 About Me
-            </h1>
+            </h2>
             <p>
                 Hello! 👋 My name is Tobias Mellum Jondahl, and I come from Arna,
                 just outside Bergen, Norway. I'm currently in the final stretch of completing my Bachelor's

@@ -1,47 +1,48 @@
-// Gallery_showcase.js
+window.addEventListener('DOMContentLoaded', () => {
+  const content          = document.getElementById('panContent');
+  const galleryContainer = document.getElementById('galleryContainer');
+  const modal            = document.getElementById('modal');
+  const modalImg         = document.getElementById('modalImg');
+  const closeBtn         = document.getElementById('modalClose');
 
-// Array for å holde bildene
-let images = [];
-// Antall bilder du vil vise
-const numImages = 1;
+  // Init Panzoom
+  const panzoom = Panzoom(content, {
+    contain:     'outside',
+    cursor:      'move',
+    filterTaps:  true,
+    zoomEnabled: false
+  });
 
-// Last inn bildene før oppstart
-function preload() {
-  // Hvis du ikke endrer filnavnet, må du escape mellomrom:
-  images[0] = loadImage('images/Cute%20japanese%20spitz.jpg');
-  // Eller, etter å ha endret filnavn til f.eks. cute-japanese-spitz.jpg:
-  // images[0] = loadImage('images/cute-japanese-spitz.jpg');
-}
+  // Hjelpefunksjon for å åpne modal
+  function openModal(src) {
+    modalImg.src = src;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';  // deaktiverer scrolling i bakgrunnen
+  }
 
-function setup() {
-  // WebGL‑canvas som fyller hele vinduet
-  const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-  canvas.parent('galleryContainer');  // Legg den i <div id="galleryContainer">
+  // Hjelpefunksjon for å lukke modal
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';        // gjenoppretter scrolling
+  }
 
-  noStroke();            // Slå av konturlinje
-  textureMode(NORMAL);   // Normaliserte teksturkoordinater
-}
+  // Delegert click-lytters for bildene
+  galleryContainer.addEventListener('click', e => {
+    if (e.target.matches('.panzoom-item')) {
+      openModal(e.target.src);
+    }
+  });
 
-function draw() {
-  background(30);        // Mørk bakgrunn
+  // Lukkeknapp og klikk utenfor bilde
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
 
-  orbitControl();        // Aktiver kun rotasjon (ingen zoom med musehjul)
-
-  // Eksempel: roter hele scenen sakte rundt Y‑aksen
-  rotateY(frameCount * 0.001);
-
-  // Her plasserer du bildene på en tenkt sfære senere...
-  // Foreløpig tegner vi bare det første bildet som test:
-  push();
-    // Flytt litt bakover så vi ser planet
-    translate(0, 0, 200);
-    // Heng bildet som en tekstur på en plane
-    texture(images[0]);
-    plane(300, 200);     // Bildeplanet, juster størrelse etter behov
-  pop();
-}
-
-// Håndterer vindusresize
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
+  // ESC-tast lukker modal
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+});
