@@ -1,3 +1,5 @@
+// Interactive_Gallery_Showcase.js
+
 window.onload = () => {
   const content          = document.getElementById('panContent');
   const galleryContainer = document.getElementById('galleryContainer');
@@ -9,45 +11,48 @@ window.onload = () => {
   const panzoom = Panzoom(content, {
     contain:     'outside',
     cursor:      'move',
-    filterTaps:  true,
-    zoomEnabled: false
+    filterTaps:  true,   // skiller korte “taps” fra drag
+    zoomEnabled: false   // ingen zoom
   });
 
-  // —— Midtstill kartet etter at alt er rendret ——
-  requestAnimationFrame(() => {
-    const contentRect   = content.getBoundingClientRect();
-    const containerRect = galleryContainer.getBoundingClientRect();
-    const offsetX = (contentRect.width  - containerRect.width)  / 2;
-    const offsetY = (contentRect.height - containerRect.height) / 2;
-    panzoom.pan(-offsetX, -offsetY);
-  });
-  // ——————————————————————————————————————————————————
+  // —— Midtstill kartet etter alt er rendret ——
+  setTimeout(() => {
+    const cRect = content.getBoundingClientRect();
+    const gRect = galleryContainer.getBoundingClientRect();
+    const offsetX = (cRect.width  - gRect.width)  / 2;
+    const offsetY = (cRect.height - gRect.height) / 2;
+    // moveTo setter absolutt transform
+    panzoom.moveTo(-offsetX, -offsetY);
+  }, 0);
+  // ——————————————————————————————————————————————
 
-  // Hjelpefunksjoner for modal
+  // Åpne modal (deaktiverer bakgrunnsscroll)
   function openModal(src) {
     modalImg.src = src;
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
+
+  // Lukke modal (gjenoppretter scroll)
   function closeModal() {
     modal.classList.add('hidden');
     document.body.style.overflow = '';
   }
 
-  // Dobbeltklikk for å åpne (skiller drag fra klikk)
+  // Dobbeltklikk for å åpne bildet (skiller fra drag)
   galleryContainer.addEventListener('dblclick', e => {
     if (e.target.matches('.panzoom-item')) {
       openModal(e.target.src);
     }
   });
 
-  // Lukk modal-knapp og bakgrunnsklikk
+  // Lukk modal-knapp og klikk utenfor bilde
   closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', e => {
     if (e.target === modal) closeModal();
   });
 
-  // ESC-tast
+  // ESC-tast lukker modal
   window.addEventListener('keydown', e => {
     if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
       closeModal();

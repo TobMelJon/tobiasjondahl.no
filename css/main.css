@@ -386,6 +386,28 @@ iframe {
     width: 50%;
     height: auto;
 }
+.preview-container {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.preview-image {
+  max-width: 100%;
+  width: 600px;            /* eller en fast bredde etter ønske */
+  border: 4px solid #800;  /* valgfri ramme for å knytte opp mot fargepaletten */
+  border-radius: 8px;
+  transition: transform .2s;
+  cursor: pointer;
+}
+.preview-image:hover {
+  transform: scale(1.03);
+}
+
+.preview-caption {
+  font-size: 0.9em;
+  color: #333;
+  margin-top: 0.5em;
+}
 
 /* Digital Creature */
 #canvasContainer {
