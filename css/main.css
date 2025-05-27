@@ -33,6 +33,10 @@
 
 /* Mobile View (480px and below) */
 @media screen and (max-width: 480px) {
+    #canvasContainer,
+    .preview-image {
+        width: 90%;
+    }
     .intro,
     .skills_experience {
         flex-direction: column; /* Stack divs vertically */
@@ -387,12 +391,13 @@ iframe {
     height: auto;
 }
 .preview-container {
-  text-align: center;
-  margin: 2em 0;
+    text-align: center;
+    margin: 2em 0;
 }
 
 .preview-image {
   max-width: 100%;
+  height: auto;
   width: 600px;            /* eller en fast bredde etter ønske */
   border: 4px solid #800;  /* valgfri ramme for å knytte opp mot fargepaletten */
   border-radius: 8px;
@@ -413,9 +418,15 @@ iframe {
 #canvasContainer {
     width: 400px;
     height: 400px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
     border: 5px solid darkred;
     margin: auto;
     background-color: black;
+}
+#canvasContainer canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* Interactive Gallery Showcase */

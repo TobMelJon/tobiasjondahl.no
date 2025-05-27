@@ -1,3 +1,5 @@
+console.log('Interactive Gallery Showcase: script loaded');
+console.log('Panzoom:', typeof Panzoom);
 // Interactive_Gallery_Showcase.js
 
 window.onload = () => {
@@ -22,7 +24,7 @@ window.onload = () => {
     const offsetX = (cRect.width  - gRect.width)  / 2;
     const offsetY = (cRect.height - gRect.height) / 2;
     // moveTo setter absolutt transform
-    panzoom.moveTo(-offsetX, -offsetY);
+    panzoom.pan(-offsetX, -offsetY, { relative: false });
   }, 0);
   // ——————————————————————————————————————————————
 
